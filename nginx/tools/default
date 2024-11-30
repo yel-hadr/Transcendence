@@ -1,0 +1,93 @@
+server {
+	listen       443 ssl default_server;
+	server_name_in_redirect off;
+	ssl_certificate /etc/ssl/certs/cert.crt;
+	ssl_certificate_key /etc/ssl/private/key.key;
+	ssl_protocols TLSv1.2 TLSv1.3;
+	ssl_ciphers HIGH:!aNULL:!MD5;
+	modsecurity on;
+    modsecurity_rules_file /etc/nginx/modsec/main.conf;
+
+    error_log syslog:server=logstash:5140,facility=local7,tag=nginx,severity=info;
+    access_log syslog:server=logstash:5140,facility=local7,tag=nginx,severity=info;
+
+	location / {
+		add_header 'Access-Control-Allow-Origin' '*';
+		add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+		add_header 'Access-Control-Allow-Credentials' 'true' always;
+		add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS' always;
+		add_header 'Access-Control-Allow-Headers' 'Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With' always;
+		
+		if ($request_method = 'OPTIONS') {
+			add_header 'Access-Control-Max-Age' 1728000;
+			add_header 'Content-Type' 'text/plain charset=UTF-8';
+			add_header 'Content-Length' 0;
+			return 204;
+		}
+
+		root /front/client/static;
+		try_files $uri $uri/ /index.html;
+		add_header Last-Modified $date_gmt;
+		add_header Cache-Control 'no-store, no-cache';
+		if_modified_since off;
+		expires off;
+		etag off;
+	}
+
+	location /api {
+	    proxy_pass http://rest_api:8000;
+
+		proxy_set_header Host $host;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Forwarded-Proto $scheme;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+	}
+	location /webs/ {
+		proxy_pass http://game:8001;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+		proxy_set_header Host $host;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Forwarded-Proto $scheme;
+	}
+	location /ws/ {
+		proxy_pass http://rest_api:8000;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+		proxy_set_header Host $host;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Forwarded-Proto $scheme;
+	}
+
+	location /images/ {
+		root /front/client/static/;
+	}
+	location /uploads/ {
+		root /front/client/static/;
+	}
+}
+
+server {
+    listen 5601 ssl;
+	server_name_in_redirect off;
+	ssl_certificate /etc/ssl/certs/cert.crt;
+	ssl_certificate_key /etc/ssl/private/key.key;
+	ssl_protocols TLSv1.2 TLSv1.3;
+
+	location / {
+        proxy_pass http://kibana:5601;
+		proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+        # try_files /front/static/$uri 404$uri;

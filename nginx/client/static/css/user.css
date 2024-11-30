@@ -1,0 +1,99 @@
+#userProfileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+  row-gap: 50px;
+}
+#userProfileContainer #userTopNavContainer {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  justify-content: space-between;
+}
+#userProfileContainer #userTopNavContainer #userTopNavSearchContainer,
+#userProfileContainer #userTopNavContainer #userTopNavOptionsContainer {
+  width: 100%;
+  max-width: 300px;
+}
+#userProfileContainer #userCardContainer {
+  background: rgba(32, 152, 238, 0.19);
+  border: 1px solid rgba(32, 152, 238, 0.61);
+  width: 100%;
+  max-width: 1500px;
+  box-sizing: content-box;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#userProfileContainer #userCardContainer #userCardInfosContainer {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid rgba(32, 152, 238, 0.61);
+  justify-content: center;
+}
+#userProfileContainer #userCardContainer #userCardInfosContainer img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#userProfileContainer #userCardContainer #userCardInfosContainer h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+#userProfileContainer #userCardContainer #userCardInfosContainer span {
+  color: #ddd;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+#userProfileContainer #userCardContainer #userCardInfosContainer button {
+  background: none;
+  background: rgba(32, 152, 238, 0.19);
+  border: 1px solid rgba(32, 152, 238, 0.61);
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+#userProfileContainer #userCardContainer #userCardHistory {
+  width: 100%;
+}
+#userProfileContainer #userMatchHistoryTitle {
+  color: white;
+  font-size: 2rem;
+}
+#userProfileContainer .userProfileMatchHistory {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  max-width: 1500px;
+  padding: 10px;
+}
+#userProfileContainer .userProfileMatchHistory .userMatchLog {
+  background: rgba(32, 152, 238, 0.19);
+  border: 1px solid rgba(32, 152, 238, 0.61);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+#userProfileContainer .userProfileMatchHistory .userMatchLog span {
+  color: white;
+}
+
+@keyframes shrink {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 1500px;
+  }
+}/*# sourceMappingURL=user.css.map */

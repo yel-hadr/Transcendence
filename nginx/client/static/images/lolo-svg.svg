@@ -1,0 +1,12 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 443" width="471" height="443">
+	<title>lolo-svg</title>
+	<defs>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f1"> <feGaussianBlur stdDeviation="100"/> </filter>
+	</defs>
+	<style>
+		.s0 { filter: url(#f1);fill: #3abef9 } 
+	</style>
+	<g>
+		<path class="s0" d="m258 369c-72.4 0-131-58.6-131-131 0-72.4 58.6-131 131-131 72.4 0 131 58.6 131 131 0 72.4-58.6 131-131 131z"/>
+	</g>
+</svg>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pong</title>
+    <meta name="description" content="Play pong">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <link rel="stylesheet" href="/css/root.css" styleData />
+    <link rel="stylesheet" href="/css/header.css" styleData />
+
+    <link rel="stylesheet" href="/css/home.css" styleData />
+    <link rel="stylesheet" href="/css/profile.css" styleData />
+    <link rel="stylesheet" href="/css/play.css" styleData />
+    <link rel="stylesheet" href="/css/chat.css" styleData />
+    <link rel="stylesheet" href="/css/tournament.css" styleData />
+    <link rel="stylesheet" href="/css/practice.css" styleData />
+    <link rel="stylesheet" href="/css/signing.css" styleData />
+    <link rel="stylesheet" href="/css/user.css" styleData />
+    <link rel="stylesheet" href="/css/passwordReset.css" styleData />
+    <link rel="stylesheet" href="/css/gameModes.css" styleData />
+    <link rel="stylesheet" href="/css/game.css" styleData />
+    <link rel="stylesheet" href="/css/tournamentHub.css" styleData />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+  </head>
+  <body>
+    <nav id="navigationContainer">
+      <div id="navigationHolder">
+        <div id="logoContainer">
+          <span>Pong</span>
+        </div>
+        <ul>
+          <li>
+            <div class="navigationLinkContainer">
+              <a href="/" class="shite" data-link></a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 18c0-1.54 0-2.31.347-2.876c.194-.317.46-.583.777-.777C3.689 14 4.46 14 6 14s2.31 0 2.876.347c.317.194.583.46.777.777C10 15.689 10 16.46 10 18s0 2.31-.347 2.877c-.194.316-.46.582-.777.776C8.311 22 7.54 22 6 22s-2.31 0-2.876-.347a2.35 2.35 0 0 1-.777-.776C2 20.31 2 19.54 2 18m12 0c0-1.54 0-2.31.347-2.876c.194-.317.46-.583.777-.777C15.689 14 16.46 14 18 14s2.31 0 2.877.347c.316.194.582.46.776.777C22 15.689 22 16.46 22 18s0 2.31-.347 2.877a2.36 2.36 0 0 1-.776.776C20.31 22 19.54 22 18 22s-2.31 0-2.876-.347a2.35 2.35 0 0 1-.777-.776C14 20.31 14 19.54 14 18M2 6c0-1.54 0-2.31.347-2.876c.194-.317.46-.583.777-.777C3.689 2 4.46 2 6 2s2.31 0 2.876.347c.317.194.583.46.777.777C10 3.689 10 4.46 10 6s0 2.31-.347 2.876c-.194.317-.46.583-.777.777C8.311 10 7.54 10 6 10s-2.31 0-2.876-.347a2.35 2.35 0 0 1-.777-.777C2 8.311 2 7.54 2 6m12 0c0-1.54 0-2.31.347-2.876c.194-.317.46-.583.777-.777C15.689 2 16.46 2 18 2s2.31 0 2.877.347c.316.194.582.46.776.777C22 3.689 22 4.46 22 6s0 2.31-.347 2.876c-.194.317-.46.583-.776.777C20.31 10 19.54 10 18 10s-2.31 0-2.876-.347a2.35 2.35 0 0 1-.777-.777C14 8.311 14 7.54 14 6" color="currentColor"/></svg>
+            </div>
+          </li>
+          <li>
+            <div class="navigationLinkContainer"></div>
+            <a id="goToSign" href="/signing" class="shite" data-link> </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2em"
+              height="2em"
+              viewBox="0 0 32 32"
+            >
+              <path
+                fill="currentColor"
+                d="M12 4a5 5 0 1 1-5 5a5 5 0 0 1 5-5m0-2a7 7 0 1 0 7 7a7 7 0 0 0-7-7m10 28h-2v-5a5 5 0 0 0-5-5H9a5 5 0 0 0-5 5v5H2v-5a7 7 0 0 1 7-7h6a7 7 0 0 1 7 7zm0-26h10v2H22zm0 5h10v2H22zm0 5h7v2h-7z"
+              />
+            </svg>
+          </li>
+          <li>
+            <div class="navigationLinkContainer">
+              <a href="/chat" class="shite" data-link title="Chat"> </a>
+              <svg id="chatSvgIcon" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" d="M9.562 3a7.5 7.5 0 0 0-6.798 10.673l-.724 2.842a1.25 1.25 0 0 0 1.504 1.524c.75-.18 1.903-.457 2.93-.702A7.5 7.5 0 1 0 9.561 3m-6 7.5a6 6 0 1 1 3.33 5.375l-.244-.121l-.264.063c-.923.22-1.99.475-2.788.667l.69-2.708l.07-.276l-.13-.253a6 6 0 0 1-.664-2.747m11 10.5a7.48 7.48 0 0 1-5.1-2h.1c.718 0 1.415-.089 2.08-.257c.865.482 1.86.757 2.92.757c.96 0 1.866-.225 2.67-.625l.243-.121l.264.063c.922.22 1.966.445 2.74.61c-.175-.751-.414-1.756-.642-2.651l-.07-.276l.13-.253a6 6 0 0 0 .665-2.747a6 6 0 0 0-2.747-5.042a8.4 8.4 0 0 0-.8-2.047a7.503 7.503 0 0 1 4.344 10.263c.253 1.008.509 2.1.671 2.803a1.244 1.244 0 0 1-1.467 1.5a133 133 0 0 1-2.913-.64a7.5 7.5 0 0 1-3.088.663"/></svg>
+            </div>
+          </li>
+          <li>
+            <div class="navigationLinkContainer">
+              <a href="/tournament" class="shite" data-link title="Tournament"> </a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M16 22v-9c0-1.414 0-2.121-.44-2.56C15.122 10 14.415 10 13 10h-2c-1.414 0-2.121 0-2.56.44C8 10.878 8 11.585 8 13v9"/><path stroke-linecap="round" d="M8 22c0-1.414 0-2.121-.44-2.56C7.122 19 6.415 19 5 19s-2.121 0-2.56.44C2 19.878 2 20.585 2 22m20 0v-3c0-1.414 0-2.121-.44-2.56C21.122 16 20.415 16 19 16s-2.121 0-2.56.44C16 16.878 16 17.585 16 19v3" opacity="0.5"/><path d="M11.146 3.023C11.526 2.34 11.716 2 12 2s.474.34.854 1.023l.098.176c.108.194.162.29.246.354c.085.064.19.088.4.135l.19.044c.738.167 1.107.25 1.195.532s-.164.577-.667 1.165l-.13.152c-.143.167-.215.25-.247.354s-.021.215 0 .438l.02.203c.076.785.114 1.178-.115 1.352c-.23.175-.576.015-1.267-.303l-.178-.082c-.197-.09-.295-.136-.399-.136s-.202.046-.399.136l-.178.082c-.691.318-1.037.478-1.267.303c-.23-.174-.191-.567-.115-1.352l.02-.203c.021-.223.032-.334 0-.438s-.104-.187-.247-.354l-.13-.152c-.503-.588-.755-.882-.667-1.165c.088-.282.457-.365 1.195-.532l.19-.044c.21-.047.315-.07.4-.135c.084-.064.138-.16.246-.354z"/></g></svg>
+            </div>
+          </li>
+          <li>
+            <button id="showNotificationBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="2.4em" height="2.4em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.019 17h-6.04m6.04 0h3.614c1.876 0 1.559-1.86.61-2.804C15.825 10.801 20.68 3 11.999 3s-3.825 7.8-7.243 11.196c-.913.908-1.302 2.804.61 2.804H8.98m6.039 0c0 1.925-.648 4-3.02 4s-3.02-2.075-3.02-4"/></svg>
+            </button>
+          </li>
+          
+          <li>
+            <div class="navigationLinkContainer"></div>
+            <a id="goToSign" href="/gameModes"  title="GameModes" class="shite" data-link> </a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 22 22"><path fill="currentColor" d="M12 6h-2V4h2m-6 8H4v-2h2m8 11H8v-1H7v-5H2v-1H1V8h1V7h5V2h1V1h6v1h1v5h5v1h1v6h-1v1h-5v5h-1m-1-1v-6h6V9h-6V3H9v6H3v4h6v6Z"/></svg>
+          </li>
+          <li id="moreInfosBtnContainer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2em"
+              height="2em"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="#fff"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="12" cy="5" r="1" />
+                <circle cx="12" cy="19" r="1" />
+              </g>
+            </svg>
+          </li>
+        </ul>
+        <div id="logOutBtnContainer">
+          <button id="logOutBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" d="m17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="ball"></div>
+    <div id="notificationsContainer">
+      <ul id="notificationsList">
+        
+      </ul>
+    </div>
+    <div id="app">
+      
+    </div>
+    <script type="module" src="/js/index.js"></script>
+    <!-- <script type="module" src="./js/home.js"></script> -->
+    <script type="module" src="/js/nav.js"></script>
+  </body>
+</html>

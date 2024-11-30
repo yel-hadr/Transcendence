@@ -1,0 +1,234 @@
+$bkColor: #0a0c25;
+$txtColor: #affe00;
+$animationDelay: 300ms;
+$font: "Poppins", sans-serif;
+
+#header {
+  //   height: 100px;
+  padding: 20px 40px;
+  // background-color: $bkColor;
+  background-color: white;
+  // border: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  // backdrop-filter: blur(10px);
+  // background-color: rgba(255, 255, 255, 0.3);
+  max-width: 1500px;
+  margin: auto;
+  // box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 0px 0px 10px 10px;
+  border-bottom: 1px solid #ddd;
+  // margin-top: 10px;
+  // background-color: white;
+  z-index: 2;
+  #logoContainer {
+    display: flex;
+    align-items: center;
+    // border: 1px solid white;
+    a {
+      // color: $txtColor;
+      color: black;
+      // color: black;
+      font-family: $font;
+      // font-family: sans-serif;
+      font-weight: 800;
+      font-size: 2vw;
+      text-decoration: none;
+      // outline-color: $txtColor;
+      // text-shadow: 1px 1px 2px pink;
+      //   animation: slideUp $animationDelay forwards;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    ul {
+      display: flex;
+      column-gap: 50px;
+      list-style: none;
+      // align-items: center;
+      // display: none;
+      // border: 1px solid red;
+      li {
+        animation: slideUp $animationDelay forwards;
+        opacity: 0;
+        position: relative;
+        a {
+          //   display: block;
+          text-decoration: none;
+          // color: $txtColor;
+          color: black;
+          // font-family: "Orbitron", sans-serif;
+          font-family: $font;
+          font-weight: 600;
+          // font-size: 0rem;
+          letter-spacing: 4px;
+          outline-color: black;
+          // text-shadow: 1px 1px 2px pink;
+          font-size: 1.5rem;
+          // color: red;
+        }
+      }
+      li:before {
+        content: "";
+        position: absolute;
+        top: calc(100% + 8px);
+        bottom: -10px;
+        left: 0;
+        right: 100%;
+        // background-color: $txtColor;
+        background-color: black;
+        transition: 200ms ease-in-out;
+        // box-shadow: 1px 1px 2px pink;
+        // display: none;
+        // border: 1px solid white;
+      }
+      li:hover::before {
+        right: 0;
+      }
+
+      @for $i from 1 through 5 {
+        li:nth-child(#{$i}) {
+          animation-delay: calc(300ms * #{$i});
+        }
+      }
+    }
+  }
+  button {
+    display: none;
+    cursor: pointer;
+  }
+}
+
+.mobileNavSlide {
+  // background-color: $bkColor;
+  // background-color: $txtColor;
+  background-color: black;
+
+  // background-color: greenyellow;
+  // display: block;
+  position: fixed;
+  height: 100vh;
+  width: 50%;
+  top: 0;
+  z-index: 2;
+  transition: 400ms ease-in-out;
+}
+#leftMobileNavSlide {
+  left: -50%;
+}
+#rightMobileNavSlide {
+  right: -50%;
+}
+
+#mobileNav {
+  // border: 1px solid red;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  // background-color: $bkColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 3;
+  display: none;
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    z-index: 3;
+    // border: 1px solid red;
+    // width: 90%;
+    // display: none;
+    li {
+      animation: slideUp 300ms forwards;
+      opacity: 0;
+      a {
+        text-decoration: none;
+        font-family: "Orbitron", sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        // color: black;
+        color: white;
+        outline-color: black;
+        padding: 10px;
+        text-shadow: 1px 1px 2px pink;
+      }
+    }
+    @for $i from 1 through 5 {
+      li:nth-child(#{$i}) {
+        animation-delay: calc(300ms * #{$i});
+      }
+    }
+  }
+  #mobileNavCloseBtn {
+    position: absolute;
+    bottom: 50px;
+    display: block;
+    padding: 0;
+    #mobileNavCloseBtn {
+      // opacity: 0;
+      // animation: slideUp 500ms linear;
+    }
+    button {
+      display: block;
+      // color: red;
+      padding: 15px 40px;
+      background: none;
+      color: white;
+      text-shadow: 1px 1px 2px pink;
+      font-family: "Orbitron", sans-serif;
+      font-weight: 400;
+      border: 1px solid white;
+      border-radius: 5%;
+      font-size: 1rem;
+      outline-color: black;
+      cursor: pointer;
+    }
+  }
+  // #closeMobileNav {
+  //   border: 1px solid red;
+  //   // position: absolute;
+  //   // bottom: 10px;
+  // }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1166px) {
+  #header {
+    #logoContainer {
+      a {
+        font-size: 1.4rem;
+      }
+    }
+    nav {
+      display: none;
+    }
+    button {
+      display: inline;
+      border: none;
+      outline-color: black;
+      background: none;
+      color: black;
+      svg {
+        color: black;
+      }
+    }
+  }
+}

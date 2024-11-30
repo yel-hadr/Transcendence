@@ -1,0 +1,120 @@
+#tournamentContainer #tournamentOptionsContainer {
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder {
+  background: rgba(32, 152, 238, 0.19);
+  border: 1px solid rgba(32, 152, 238, 0.61);
+  width: 90%;
+  max-width: 700px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 274px;
+  justify-content: space-between;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder p {
+  color: white;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder .tournamentTxtHelper {
+  color: red;
+  display: none;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder input {
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  letter-spacing: 2px;
+  border: 1.4px solid #ddd;
+  border-radius: 5px;
+  outline-color: black;
+  background: rgba(32, 152, 238, 0.19);
+  border: 1px solid rgba(32, 152, 238, 0.61);
+  color: white;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder .tounamentActionsBtnContainer {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder .tounamentActionsBtnContainer #goToMyHostedTournament, #tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder .tounamentActionsBtnContainer #abortMyHostedTournament {
+  display: none;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder .tounamentActionsBtnContainer button {
+  background: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 400ms;
+  border: none;
+  background-color: #0f8e72;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder .tounamentActionsBtnContainer button .tournamentOptionsLoading {
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: loading 700ms infinite linear;
+  display: none;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder .tounamentActionsBtnContainer #goToMyHostedTournament {
+  background-color: green;
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder .tounamentActionsBtnContainer #abortMyHostedTournament {
+  background-color: rgb(175, 0, 0);
+}
+#tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder .tounamentActionsBtnContainer #CreateTournamentButton {
+  padding: 10px 50px;
+}
+
+@media screen and (max-width: 1775px) {
+  #tournamentContainer #tournamentOptionsContainer {
+    row-gap: 30px;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 474px) {
+  #tournamentContainer #tournamentOptionsContainer {
+    row-gap: 30px;
+    flex-direction: column;
+  }
+  #tournamentContainer #tournamentOptionsContainer .tournamentOptionHolder {
+    row-gap: 30px;
+    height: unset;
+  }
+}
+@keyframes loading {
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes beating {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+  75% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}/*# sourceMappingURL=tournament.css.map */
