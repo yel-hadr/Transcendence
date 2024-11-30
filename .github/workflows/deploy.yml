@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker images
+        run: |
+          docker compose -f docker-compose.yml build
+
+      - name: Deploy services
+        run: |
+          docker compose -f docker-compose.yml up -d
