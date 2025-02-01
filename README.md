@@ -9,12 +9,6 @@ Welcome to **ft_transcendence**, a modern, interactive, and secure web-based Pon
 1. [Project Overview](#project-overview)
 2. [Features](#features)
 3. [Technical Stack](#technical-stack)
-4. [Installation](#installation)
-5. [Usage](#usage)
-6. [Security](#security)
-7. [Contributing](#contributing)
-8. [License](#license)
-
 ---
 
 ## Project Overview
@@ -45,14 +39,4 @@ This project is about creating a website for the mighty **Pong** contest! The go
 - **Log Management**: ELK Stack (Elasticsearch, Logstash, Kibana) for centralized logging and monitoring.
 
 ---
-
-## Installation
-
-To get started with the project, follow these steps:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yel-hadr/Transcendence.git
-   cd Transcendence
-   ```
    
