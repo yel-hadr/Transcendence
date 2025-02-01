@@ -1,33 +1,58 @@
-# done modules : 
-4 major modules
-1 minor module
+# ft_transcendence
 
-## General
+Welcome to **ft_transcendence**, a modern, interactive, and secure web-based Pong game. This project is a real-time multiplayer game where users can play Pong against each other, participate in tournaments, and enjoy a seamless user experience. The project showcases skills in web development, game design, and cybersecurity.
 
-### Devops
-[X] - Major module: Designing the Backend as Microservices.
+---
 
-### web
-[X] - Minor module: Use a database for the backend -and more.  
+## Table of Contents
 
-## mlalama
-[+] - Done modules  
-### web
-[X] - Major module: Use a Framework as backend. django  
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Technical Stack](#technical-stack)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Security](#security)
+7. [Contributing](#contributing)
+8. [License](#license)
 
-### User Management
-[ ] - Major module: Standard user management, authentication, users across tournaments.  
-    TODO :   
-        [ ] - Tournament db  
-        [ ] - online status  
-[X] - Major module: Implementing a 42 remote authentication.  
+---
 
-### Cybersecurity
-[ ] - Minor module: GDPR Compliance Options with User Anonymization, Local Data Management, and Account Deletion  
-[X] - Major module: Implement Two-Factor Authentication (2FA) and JWT.  
+## Project Overview
 
+This project is about creating a website for the mighty **Pong** contest! The goal is to build a real-time multiplayer online game where users can play Pong against each other, participate in tournaments, and enjoy a seamless user experience. The project also includes advanced features such as user management, live chat, robust security measures, and log management with the **ELK Stack**.
 
-# Transcendence
-# Transcendence
-# Transcendence
-# Transcendence
+---
+
+## Features
+
+- **Real-time Multiplayer Pong**: Play Pong against other players in real-time.
+- **Tournament System**: Organize and participate in Pong tournaments with multiple players.
+- **User Management**: Secure user registration, login, and profile management.
+- **Live Chat**: Communicate with other players via a live chat system.
+- **Single-Page Application**: The website is a single-page application with functional back/forward buttons.
+- **Security**: Implement HTTPS, SQL injection protection, XSS prevention, and more.
+- **Log Management**: Centralized logging and monitoring using the **ELK Stack** (Elasticsearch, Logstash, Kibana).
+
+---
+
+## Technical Stack
+
+- **Frontend**: Pure vanilla JavaScript.
+- **Backend**: Django (Python web framework).
+- **Database**: PostgreSQL.
+- **Containerization**: Docker for easy deployment and running.
+- **Browser Compatibility**: Latest stable version of Google Chrome.
+- **Log Management**: ELK Stack (Elasticsearch, Logstash, Kibana) for centralized logging and monitoring.
+
+---
+
+## Installation
+
+To get started with the project, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yel-hadr/Transcendence.git
+   cd Transcendence
+   ```
+   
